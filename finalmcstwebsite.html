@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCST</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #B6D0E2;
+        }
+        header {
+            background: linear-gradient(to right, #4682B4, #7393B3);
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            animation: fadeInZoom 5s ease-in-out;
+        }
+        @keyframes fadeInZoom {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #6082B6;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a, nav .dropdown-toggle{
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+            cursor:pointer;
+        }
+          nav a:hover, nav .dropdown-toggle:hover {
+            color: #B6D0E2;
+            transform: scale(1.1);
+        } 
+         .dropdown {
+            position:relative;
+            display:inline-block;
+        }
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #7393B3;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+          .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+        }
+        .dropdown-content a:hover {
+            background-color: #B6D0E2;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        nav a:hover {
+            color: #B6D0E2;
+            transform: scale(1.1);
+        }
+        .hero {
+            height: 100vh;
+            background: url("https://lh3.googleusercontent.com/pw/AP1GczO-xcrq62l1kdbJerFRPQAnutquM_AlouptbGeVSzdZz2P2uiGJA5z8wKyLR_AEPdd4pjFR8d9sZity8Qi43bjsCcbyYm5MmAVjWqkrMTqBrLv-ZkNjf47GN-lR3hj0cGhLTe-zD8ER2ZShEU-icBkm-Q=w720-h406-s-no-gm?authuser=0") no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .hero div {
+            position: relative;
+            z-index: 1;
+            animation: slideInLeft 1.5s ease-out;
+        }
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .hero h1 {
+            font-size: 3rem;
+            animation: colorFade 3s ease-in-out infinite alternate;
+        }
+        @keyframes colorFade {
+            from {
+                color: #fff;
+            }
+            to {
+                color: #1338BE;
+            }
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+ {
+   
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  min-height : 800px;
+}
+
+.container {
+  position : relative;
+  width : 1100px;
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  flex-warp : warp;
+  padding : 30px;  
+}
+
+.container .card {
+  position: relative;
+  max-width : 300px;
+  height : 215px;  
+  background-color : #fff;
+  margin : 30px 10px;
+  padding : 20px 15px;
+  
+  display : flex;
+  flex-direction : column;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+  transition : 0.3s ease-in-out;
+  border-radius : 15px;
+}
+.container .card:hover {
+  height : 520px;    
+}
+
+.container .card .image {
+  position : relative;
+  width : 260px;
+  height : 260px;
+  
+  top : -40%;
+  left: 8px;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.2);
+  z-index : 1;
+}
+
+.container .card .image img {
+  max-width : 100%;
+  border-radius : 15px;
+}
+
+.container .card .content {
+  position : relative;
+  top : -140px;
+  padding : 10px 15px;
+  color : #111;
+  text-align : center;
+  
+  visibility : hidden;
+  opacity : 0;
+  transition : 0.3s ease-in-out;
+    
+}
+
+.container .card:hover .content {
+   margin-top : 30px;
+   visibility : visible;
+   opacity : 1;
+   transition-delay: 0.2s
+     }
+   
+    .testimotionals {
+width:350px;
+ display:inline-block;
+  margin-left:50px;
+  margin-top:50px
+  
+}
+
+.testimotionals .card {
+  
+  position:relative;
+  overflow:hidden;
+  width:350px;
+  margin:0 auto;
+  background:#333;
+  padding:20px;
+  box-sizing:border-box;
+  text-align:center;
+  box-shadow:0 10px 40px rgba(0,0,0,.5)
+}
+.testimotionals .card .layer {
+  z-index:1;
+  position:absolute;
+  top:calc(100% - 2px);
+  height:100%;
+  width:100%;
+  left:0;
+  background:linear-gradient(to left , blue, #8282e3);
+  transition:0.5s;
+  
+}
+
+.testimotionals .card .content {
+  z-index:2; 
+  position:relative;
+}
+
+.testimotionals .card:hover  .layer{
+  top:0;
+}
+
+.testimotionals .card .content p {
+  font-size:14px;
+  line-height:24px;
+  color:#fff;
+  
+}
+.testimotionals .card .content .image {
+  width:100px; height:100px;
+  margin:0 auto;
+  border-radius:50%;
+  overflow:hidden;
+  border: 4px solid white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  
+}
+
+.testimotionals .card .conte nt .details h2 {
+font-size:18px;
+color:white;
+}
+.testimotionals .card .content .details h2 span {
+font-size:18px;
+color:purple;
+  transition:0.5s;
+}
+.testimotionals .card:hover .content .details h2 span {
+  color:white;
+  position:relative
+}
+
+body{
+  margin-bottom:20px
+      }
+      
+        .news .ticker {
+            background: #7393B3;
+            color: white;
+            padding: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .news .ticker h3 {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scrollText 10s linear infinite;
+            font-size: 1.2rem;
+        
+          
+        }
+        @keyframes scrollText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        .about {
+            position: relative;
+        }
+        .about img {
+            width: 80%;
+            max-width: 400px;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            animation: slideIn 2s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .about p {
+            font-size: 1.2rem;
+            color: #4682B4;
+            animation: fadeInText 1.5s ease-in-out;
+        }
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .form-section form {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 20px 6px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #6F8FAF;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mandaluyong College of Science and Technology</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses Offered</a>
+        <a href="#about">About Us</a>
+        <a href="#news">News & Events</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+   <div class="hero" id="home">
+        <div>
+            <h1>Welcome! </h1>
+            <p>Mandaluyong College of Science and Technology ( MCST), where knowledge meets innovation and excellence meets opportunity!
+
+
+<p>As we embark on this journey together, we invite you to embrace the culture of excellence, fostered by a passion for learning, a spirit of curiosity, and a commitment to making a positive impact. 
+
+
+<p>Together, let's create a future that is shaped by your imagination, driven by your creativity, and inspired by your dreams.
+</p>
+     </div>
+</div>
+  
+<div class="section form-section" id="home">
+        <h2>Apply Online</h2>
+        
+<p>Admissions at Mandaluyong College of Science and Technology are now open.
+
+
+<p>MCST offers <b>FREE COLLEGE EDUCATION</b> as the tuition fee is subsidized by the Mandaluyong LGU.
+
+ 
+<p>Please read carefully the step-by-step procedure on how to be admitted at your chosen program. Take note that the <b>ENTIRE ADMISSION PROCESS</b> is fully <b>ONLINE.</b> 
+
+
+<div class="section form-section" id="home">
+        <h2>ADMISSION PROCESS</h2>
+
+<p><b>STEP 1a:</b> Complete the Admission Form by clicking on bit.ly/MCSTadmission
+
+
+<p><b>STEP1b:</b> the last step to completing your admission application process is by uploading 2 Recommendation forms for Step 1a found here: <a href="#">bit.ly/MCSTrecomform2023</a>
+
+
+<p><b>STEP 2:</b> Wait for the announcement of results of admission. This will be released via your provided email address in the application form.
+
+<p><b>Step 3:</b> The email shall contain details regarding the schedule of qualifying examination.
+
+<p><b>Step 4:</b>Proceed to the designated testing site on your schedule. Please bring <b>2 pencils, 1 long white folder and 1 ballpen.</b>
+
+<p><b>Step 5:</b> The announcement of qualifying exam results will be released a day after the test. The results will be notified via the <b>ACTIVE email</b> as indicated on the application form, or via its <b>Official Facebook Page and website.</b> Result of admission is expected to be released on <b>October 5, 2023.</b>
+
+<p><b>Step 6:</b> Once qualified, please proceed to MCST Administration Building for enrollment along with the indicated requirements during admission and <b>2 pieces of 2x2 picture with name tag.</b> Enrollment will commence on <b>October 6, 2023.</b>
+
+<p><b>REMINDER:</b> ADMISSION will last from <b>September 29, 2023</b> to <b>October 1, 2023</b> ONLY.
+
+
+<div class="section form-section" id="home">
+        <h2>ADMISSION REQUIREMENTS</h2>
+
+ <p><b>Application Form: </b> Fully accomplished form <a href="#">bit.ly/MCSTadmission</a>
+
+ <p>Photocopy of the <b>Grade 12 Report Card</b>
+
+ <p>Photocopy of <b>SHS Diploma</b>
+
+ <p>Obtain a certificate of <b>Good Moral Character</b> from the former Adviser, Guidance Counselor, or School Principal.
+
+
+<div class="section form-section" id="home">
+        <h3>Mandaluyong Residency Proof:</h3> Submit any ONE of the following:
+
+<p>1.<b>Voter's ID</b> (applicant or parents).
+
+<p>2.<b>Government-issued ID</b> of the applicant, their parents, or legal guardian.
+
+<p>3.<b>Utility bill</b> (e.g., electricity, water) or other proof of billing with Mandaluyong City address
+
+ <p>Photocopy of the applicant's <b>NSO/PSA</b> birth certificate.
+
+ <p><b>Recommendations:</b> Two (2) Recommendation Forms filled out by previous educators. Forms are downloadable from <a href="#">bit.ly/MCSTrecomform2023.</a>
+
+ <p>2 pieces 2x2 picture with name tag
+
+
+<p>Fill in the details below to apply:</p>
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="age" placeholder="Age" required>
+            <select>
+                <option>Select Course</option>
+                <option>Bachelor of Science in Information Technology</option>
+                <option>Bachelor of Arts in Communications</option>
+                <option>Bachelor of Science in Mathematics</option>
+            </select>
+            <input type="text" placeholder="Address" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+  <div class="section courses" id="courses">
+        <h2>Courses Offered</h2>
+        <p>Explore a variety of programs tailored to your aspirations.</p>
+  <div class="container">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="image">
+               <img src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t39.30808-6/448929910_122152642838045833_7038374701563045678_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHuEG-VfyXPwCLvvOXxDk_UqhLhuSZvKYaqEuG5Jm8phgngTTZlgY4z_0LpGp4gBIgH0EL9L2Ee4N2qUFMFvrS3&_nc_ohc=zP-82dxThWQQ7kNvgF69-0v&_nc_zt=23&_nc_ht=scontent.fmnl25-3.fna&_nc_gid=ABebSLKDuw0liVBfblb7Wtg&oh=00_AYAAw5W8wnC4ESgD2ZahRMgQjUi5JK4_ZZ-yDvmhi9vzkw&oe=675C7548" alt="Course">
+      </div>
+      <div class="content">
+        <h3>Bachelor of Science in Information Systems</h3>
+        <p>Excited to introduce the tech enthusiasts and problem solvers from Mandaluyong College of Science and Technology's BS Information Systems program! Prepare for a journey where innovation meets information, and challenges are opportunities in disguise. Together, we'll decode complexities, design solutions, and shape a digital future!</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="image">
+       <img src="https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/449170318_122152642712045833_2781445359084434477_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH__J0yB0Ye9RvO18112BciQsyFVi_LjT1CzIVWL8uNPXLmLy2uI3RCQS4e-_lKCyHmNX-i_-GwsedUOh83FfT8&_nc_ohc=O0qDm93163MQ7kNvgEzMWty&_nc_zt=23&_nc_ht=scontent.fmnl25-5.fna&_nc_gid=A7U6acELRTz5BGVAdhxCpXI&oh=00_AYAd5dARJCod28QLdNR4jkHpnmm13uC0bRqPnNey7VH_7A&oe=675C652B" alt="Course">
+      </div>
+      <div class="content">
+        <h3>Bachelor of Arts in Communications</h3>
+        <p>Embracing the art of expression and the power of words, introducing the vibrant AB Communication students of Mandaluyong College of Science and Technology! Get ready to dive into the world of storytelling, media, and creativity. Together, we'll amplify voices, inspire change, and craft narratives that resonate.</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="image">
+       <img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/448834343_122152480064045833_2457629494343352360_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHn5Pk_Y2BjCWFNTPRRcuu-6_N9ibxQUdrr832JvFBR2rZ5KP2zEpAmnaDMnJtp8yTcFw3XwiWdXYm5v3jRqAUx&_nc_ohc=KFEAq4Z4TNgQ7kNvgHNm9nK&_nc_zt=23&_nc_ht=scontent.fmnl25-4.fna&_nc_gid=AvWfREqAgGBXcV446TGf0ok&oh=00_AYDqnTX-c3gwt8wAHV2soAA5k7Ss-31FJcd_QmaqXYzg1g&oe=675C7437" alt="Course">
+      </div>
+      <div class="content">
+        <h3>Bachelor of Science in Mathematics</h3>
+        <p>Welcoming the brilliant minds of Mandaluyong College of Science and Technology's BS Mathematics program! Get ready to embark on a journey filled with numbers, equations, and endless possibilities. Here's to a future of solving mysteries and shaping the world with the power of mathematics.</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+<div class="section about" id="about">
+        <h2>About Us</h2>
+  
+<div class="testimotionals">
+  <div class="card">
+    <div class="layer">
+      
+    </div>
+    <div class="content">
+    <h2>Philosophy</h2>
+
+      <div class="details">
+         <p>Mandaluyong College of Science and Technology advocates the culture of excellence in science and technology that is anchored on the principles of quality instruction, dynamic research and innovation, continuous improvement, public service and nationalism."
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="testimotionals">
+  <div class="card">
+    <div class="layer">
+      
+    </div>
+    <div class="content">
+<h2>Goals</h2
+<div class="details">
+      <p>Provide Mandalenyos access to quality higher education.
+
+<p>Support optimum advancement in instruction, technology, research, innovation and resource generation.
+
+<p>Collaborate between and among various educational, technical and professional stakeholders for genuine public service.
+
+<p>Foster institutional effectiveness and efficiency for continuous improvement and total quality management.
+
+<p>Produce graduates who are locally and international competent with high sense of nationalism.</p>
+      
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="testimotionals">
+  <div class="card">
+    <div class="layer">
+      
+    </div>
+    <div class="content">
+<h2>Vision</h2>
+<div class="details">
+      <p>A college of distinction in Science and
+Technology committed to produce high caliber
+and employable graduates.</p>
+      
+        
+      </div>
+    </div>
+  </div>
+    </div>
+
+<div class="testimotionals">
+  <div class="card">
+    <div class="layer">
+      
+    </div>
+    <div class="content">
+<h2>Mission</h2>
+<div class="details">
+      <p>To cultivate a culture of excellence in Science
+and Technology pursuing the improvement of
+the quality of life of every Mandalenyo to bring
+about the city’s sustainable development and
+resiliency towards the nation’s building.</p>
+      
+      </div>
+    </div>
+  </div>
+    </div>
+    
+<div class="testimotionals">
+  <div class="card">
+    <div class="layer">
+      
+    </div>
+    <div class="content">
+<h2> Core Values</h2
+<div class="details">
+      <p>Mandaluyong College of Science and Technology Core Values represent the shared beliefs of theMandalenyo. These shared beliefs are captured in the six ideals that define a genuine
+Mandalenyo. As an institution, MCST upholds the
+values of:
+
+<p>
+<br>KAHUSAYAN<br>
+<br>NAGLILINGKOD<br>
+<br>KUMAKALINGA<br>
+<br>DISIPLINADO<br>
+<br>GAWA HINDI SALITA<br>
+<br>MAKABANSA<br>
+</p>
+      
+      </div>
+    </div>
+  </div>
+    </div>
+
+    <div class="section news" id="news">
+        <h2>News & Events</h2>
+        <p>Stay updated with the latest happenings.</p>
+        <div class="ticker">
+            <h3>Announcement: Admissions are now open for 2024.</h3>
+        </div>
+        <div class="news-card">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczODQaDKjv_6vPJQRH_cdbOuqoEkXw4zzka3FGMVfIfsuY2IzH2QkkLPrMYGWm6aNDO-4-kO-Ck6E9Jsw89zSSO4fZcTzqXxBmcyrVXdtet1joDof3kSS2Mgz8dUW3pwsbAdgvLtwz_HxvSI4HtejE8ljw=w720-h540-s-no-gm?authuser=0" alt="News Image">
+            <h3>Leading by Example Advocating Developing and Elevating Responsibility Leadership Seminar</h3>
+            <p>Noong nakaraang Miyerkules, Nobyembre 20, nagtipon-tipon ang ating mga Kodlings mula sa iba't ibang student organizations para sa isang araw ng pagkatuto, pagkakaisa, at pagkakapit-bisig! Ito'y may temang: 𝗟𝗲𝗮𝗱𝗶𝗻𝗴 𝗯𝘆 𝗘𝘅𝗮𝗺𝗽𝗹𝗲 𝗔𝗱𝘃𝗼𝗰𝗮𝘁𝗶𝗻𝗴 𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗶𝗻𝗴 𝗮𝗻𝗱 𝗘𝗹𝗲𝘃𝗮𝘁𝗶𝗻𝗴 𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗶𝗯𝗶𝗹𝗶𝘁𝘆. 
+
+Sama-sama nating binubuo ang mas malalakas na lider — patuloy na magsisilbing liwanag at inspirasyon para sa bawat isa. 
+
+Sama-sama para sa mas matatag na MCST!
+
+<p>: Mecah Palomu at John Belga</p>
+<p>: Mecah Palomu at John Belga</p>
+
+#MCST</p>
+        </div>
+        <div class="news-card">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczNZmvHU76dMAoJvyWoaPTfB3V7Pxb4CzjMVR9kfjynPYUQ9vHSDhh8tFGxAAnzZdHoYqFRiaiUlgXFEQkjFmtCYsqBqT73Z2NKZUeHjD9PRr7uaOAMPea1PO26045KQfoblTK4tKpGIiqu1tMoZhvjjwg=w720-h542-s-no-gm?authuser=0" alt="News Image">
+            <h3>18-Day Campaign to End Violence against Women</h3>
+            <p>"𝐕𝐀𝐖 𝐁𝐢𝐠𝐲𝐚𝐧𝐠 𝐰𝐚𝐤𝐚𝐬! 𝐍𝐠𝐚𝐲𝐨𝐧 𝐧𝐚 𝐚𝐧𝐠 𝐎𝐫𝐚𝐬."
+
+The tagline ng Philippine Commission on Women for the 2024 campaign in raising our voices, raising awareness, and advocating for a world free from violence and discrimination against women. Based on the assessment of the Anti-VAWC Act of 2004 (RA 9262), which celebrates its 20th signing anniversary. 
+
+Under the leadership of Mr. Gavy Corton, the faculty and staff of MCST, an event was organized to support the 18-day campaign to end violence against women.
+
+<p>The lecture was made engaging and exciting by the dynamic speakers, Mr. Mendelson P. Quiba and Atty. Sarah Garcia, whose motivating messages significantly heightened the awareness of the kodlings. The event was further highlighted by the presence of Dr. Jayces Francisco, Director of Student Affairs, and Dr. Ariel Bartolata, General Education Coordinator, who presented the awards.</p>
+
+#MCST
+#VAWFreePH
+#womensrightsmatter 
+#EndViolenceAgainstWomen  
+
+<p> | Ryan Jasper Austria</p>
+<p> | Francesca Cachero, Juliana Salceda</p>
+        </div>
+    </div>
+
+<div class="section form-section" id="contact">
+        <h2>Contact Us</h2>
+
+<p>Phone: 285-32-5001</p>
+<p>Email: <a href="#">mandaluyongcollgecst@gmail.com</a></p>
+<p>Facebook Page: <a href="#">facebook.com/MandaluyongCST</a></p>
+    <footer>
+        <p>&copy; 2024 Mandaluyong College of Science and Technology. All rights reserved. <a href="#">Privacy Policy</a></p>
+    </footer>
+
+<script>
+        // script
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll("nav a").forEach(link => {
+                link.addEventListener("click", e => {
+                    e.preventDefault();
+                    document.querySelector(e.target.getAttribute("href"))?.scrollIntoView({
+                        behavior: "smooth"
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
